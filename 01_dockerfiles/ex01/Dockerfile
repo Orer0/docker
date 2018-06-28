@@ -1,10 +1,5 @@
-# Based on
-FROM debian:jessie
+FROM debian
 
-# Owner
-LABEL maintainer="ndubouil@student.42.fr"
-
-# Updates and installing
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install wget bzip2 -y
 

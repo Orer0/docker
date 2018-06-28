@@ -1,6 +1,5 @@
-#ces commandes sont a lancer separement
-
 mkdir /Users/aroblin/Abathur
+echo "#! /usr/bin/python\n# -*- coding:utf-8 -*-\nfrom flask import Flask\napp = Flask(__name__)\n@app.route('/')\ndef index():\n return \"<h1>Hello World</h1>\"" > /Users/aroblin/Abathur/hello.py
 docker run -dt --name Abathur -v ~/Abathur:/root -p 3000:3000 python:2-slim
 docker exec Abathur pip install flask
 docker exec --env FLASK_APP=/root/hello.py Abathur flask run --host=0.0.0.0 --port=3000
